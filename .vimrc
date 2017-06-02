@@ -1,4 +1,3 @@
-colorscheme monokai
 " Leader
 let mapleader = " "
 
@@ -139,6 +138,9 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
+set background=dark
+colorscheme solarized
 set scrolloff=5
