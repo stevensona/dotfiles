@@ -75,6 +75,16 @@ if executable('ag')
   endif
 endif
 
+" Use Ripgrep if available
+if executable("rg")
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  if !exists(":Rg")
+    command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Rg<SPACE>
+  endif
+endif
+
 " Numbers
 set number
 set numberwidth=5
