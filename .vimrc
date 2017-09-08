@@ -138,19 +138,23 @@ set diffopt+=vertical
 call plug#begin('~/.vim/plugged')
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-sensible'
-Plug 'kchmck/vim-coffee-script'
-Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
-Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'vim-ruby/vim-ruby'
 Plug 'altercation/vim-colors-solarized'
+Plug 'dracula/vim'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
-
-set background=dark
-colorscheme solarized
+" https://github.com/metalelf0/gnome-terminal-colors
+color dracula
+let g:airline_powerline_fonts = 1
+let g:airline_theme='murmur'
 set scrolloff=5
