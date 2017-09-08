@@ -92,12 +92,6 @@ set numberwidth=5
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " vim-test mappings
 nnoremap <silent> <leader>e :!ruby %<CR>
 nnoremap <silent> <Leader>t :TestFile<CR>
@@ -121,6 +115,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Use 'jk' to exit insert mode
+inoremap jk <ESC>
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
