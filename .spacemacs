@@ -30,7 +30,7 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -138,7 +138,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               ;; :size 13
+                               :size 13
                                :weight regular
                                :width normal
                                :powerline-scale 1.1)
@@ -295,7 +295,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -315,8 +315,12 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-unordered-key-sequence t)
+  (setq-default evil-escape-excluded-major-modes '(dired-mode neotree-mode evil-visual-state help-mode ibuffer-mode))
+  (push 'visual evil-escape-excluded-states)
   (add-hook 'ruby-mode-hook 'minitest-mode)
   (setq-default minitest-use-spring 't)
+  (setq-default require-final-newline t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
