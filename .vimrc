@@ -152,6 +152,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'ElmCast/elm-vim'
 call plug#end()
 " https://github.com/metalelf0/gnome-terminal-colors
 color dracula
