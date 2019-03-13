@@ -51,7 +51,7 @@ ZSH_THEME="jreese"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ruby bundler docker zsh-autosuggestions)
+plugins=(git ruby bundler docker zsh-autosuggestions ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
