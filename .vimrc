@@ -62,12 +62,9 @@ set nojoinspaces
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
+  let g:ctrlp_max_files = 0
 
   if !exists(":Ag")
     command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
@@ -77,8 +74,12 @@ endif
 
 " Use Ripgrep if available
 if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_max_files = 0
+  
   if !exists(":Rg")
     command -nargs=+ -complete=file -bar Rg silent! grep! <args>|cwindow|redraw!
     nnoremap \ :Rg<SPACE>
@@ -153,6 +154,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'dracula/vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 " https://github.com/metalelf0/gnome-terminal-colors
 color dracula
